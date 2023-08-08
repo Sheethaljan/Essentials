@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <center>
+  <h1>Welcome to the new page</h1>
+    <br>
+    <a href="{% url 'details' %}" class="btn btn-primary">Show Form</a>
+  </center>
+  <div id="form-container" style="display:none;">
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    const showFormBtn = document.querySelector('#show-form-btn');
+    const formContainer = document.querySelector('#form-container');
+
+    showFormBtn.addEventListener('click', () => {
+      formContainer.style.display = 'block';
+    });
+  </script>
+{% endblock %}
